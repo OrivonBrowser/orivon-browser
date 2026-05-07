@@ -1,6 +1,7 @@
 import React from 'react';
 import { useUi } from '@/renderer/context/UiContext';
 import { usePermissionsStore } from '@/renderer/store/permissionsStore';
+import { PermissionRisk } from '@/lib/contracts/types';
 import TrustBadge from './TrustBadge';
 import './PermissionRequest.css';
 
@@ -54,15 +55,24 @@ export const PermissionRequest: React.FC = () => {
 
           <div className="permissions-list">
             <h4>Requested Permissions:</h4>
-            {currentRequest.permissions.map((perm) => (
-              <div key={perm.id} className={`permission-item risk-${perm.risk}`}>
-                <div className="perm-header">
-                  <span className="perm-name">{perm.name}</span>
-                  <TrustBadge level={perm.risk as any} showLabel={false} />
+            {currentRequest.permissions.map((perm) => {
+              const riskToLevel: Record<PermissionRisk, 'verified' | 'known' | 'unknown' | 'risky'> = {
+                [PermissionRisk.LOW]: 'known',
+                [PermissionRisk.MEDIUM]: 'unknown',
+                [PermissionRisk.HIGH]: 'risky',
+                [PermissionRisk.CRITICAL]: 'risky',
+              };
+
+              return (
+                <div key={perm.id} className={`permission-item risk-${perm.risk}`}>
+                  <div className="perm-header">
+                    <span className="perm-name">{perm.name}</span>
+                    <TrustBadge level={riskToLevel[perm.risk]} showLabel={false} />
+                  </div>
+                  <p className="perm-description">{perm.description}</p>
                 </div>
-                <p className="perm-description">{perm.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="warning">

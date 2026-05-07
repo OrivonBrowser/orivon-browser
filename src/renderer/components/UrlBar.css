@@ -1,0 +1,42 @@
+.url-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+.url-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.2s;
+}
+
+.dark .url-input {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #f0f0f0;
+}
+
+.url-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+.dark .url-input:focus {
+  border-color: #5aafff;
+  box-shadow: 0 0 0 2px rgba(90, 175, 255, 0.1);
+}
+
+.url-input::placeholder {
+  color: #999;
+}
+
+.dark .url-input::placeholder {
+  color: #666;
+}

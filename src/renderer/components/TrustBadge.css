@@ -1,0 +1,72 @@
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.trust-icon {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.trust-label {
+  display: inline;
+}
+
+.trust-score {
+  opacity: 0.8;
+  font-size: 0.8rem;
+}
+
+.trust-verified {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.dark .trust-verified {
+  background-color: #1e4620;
+  color: #90ee90;
+  border-color: #2d6a2d;
+}
+
+.trust-known {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.dark .trust-known {
+  background-color: #4a3f0f;
+  color: #ffd700;
+  border-color: #665500;
+}
+
+.trust-unknown {
+  background-color: #e2e3e5;
+  color: #383d41;
+  border: 1px solid #d6d8db;
+}
+
+.dark .trust-unknown {
+  background-color: #3a3a3a;
+  color: #ccc;
+  border-color: #555;
+}
+
+.trust-risky {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.dark .trust-risky {
+  background-color: #4a1f1f;
+  color: #ff6b6b;
+  border-color: #662d2d;
+}

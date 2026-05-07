@@ -1,0 +1,45 @@
+.nav-controls {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.dark .nav-controls {
+  background-color: #2a2a2a;
+}
+
+.nav-btn {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.dark .nav-btn {
+  border-color: #444;
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+}
+
+.nav-btn:hover {
+  background-color: #f0f0f0;
+  border-color: #999;
+}
+
+.dark .nav-btn:hover {
+  background-color: #444;
+  border-color: #666;
+}
+
+.nav-btn:active {
+  background-color: #e0e0e0;
+}
+
+.dark .nav-btn:active {
+  background-color: #555;
+}

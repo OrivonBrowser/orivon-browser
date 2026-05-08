@@ -7,6 +7,11 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    environmentOptions: {
+      jsdom: {
+        resources: 'usable',
+      },
+    },
     setupFiles: ['./src/__tests__/setup.ts'],
     coverage: {
       provider: 'v8',
@@ -17,8 +22,12 @@ export default defineConfig({
       ],
     },
     deps: {
-      external: ['@exodus/bytes', 'html-encoding-sniffer'],
+      external: ['@exodus/bytes', 'html-encoding-sniffer', 'jsdom'],
+      inline: ['@testing-library/react', '@testing-library/jest-dom'],
     },
+  },
+  optimizeDeps: {
+    exclude: ['@exodus/bytes', 'html-encoding-sniffer', 'jsdom'],
   },
   resolve: {
     alias: {

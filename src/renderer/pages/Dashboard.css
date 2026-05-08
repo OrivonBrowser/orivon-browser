@@ -4,9 +4,9 @@
   width: 100%;
   height: 100%;
   overflow-y: auto;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  background: linear-gradient(135deg, #1a0a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #2a1a4e 100%);
+  background-attachment: fixed;
+  color: #e0e0e0;
 }
 
 .dashboard-loading {
@@ -197,6 +197,427 @@
 
 .shortcut-icon {
   font-size: 2rem;
+}
+
+/* Top Header with Balance */
+.dashboard-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.balance-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.balance-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.balance-crypto {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #4ade80;
+}
+
+.balance-fiat {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Main Content */
+.dashboard-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* App Cards Styling */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+  opacity: 0.6;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  grid-column: 1 / -1;
+}
+
+/* App Cards */
+.app-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(30, 25, 60, 0.8) 0%, rgba(40, 35, 80, 0.6) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  backdrop-filter: blur(10px);
+  min-height: 200px;
+  justify-content: center;
+}
+
+.app-card:hover {
+  background: linear-gradient(135deg, rgba(50, 45, 100, 0.9) 0%, rgba(60, 50, 120, 0.7) 100%);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(100, 50, 200, 0.3);
+}
+
+.app-card-status {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4ade80;
+  display: block;
+}
+
+.status-dot.offline {
+  background: #f87171;
+}
+
+.app-card-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.app-card-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0.5rem 0 0;
+}
+
+.app-card-url {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.app-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: rgba(100, 150, 200, 0.3);
+  border: 1px solid rgba(100, 150, 200, 0.5);
+  border-radius: 3px;
+  font-size: 0.65rem;
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+/* Bottom Sections */
+.dashboard-bottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  padding: 0 2rem 2rem;
+}
+
+.bottom-section {
+  background: linear-gradient(135deg, rgba(30, 25, 60, 0.7) 0%, rgba(40, 35, 80, 0.5) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.section-menu {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.section-menu:hover {
+  color: #e0e0e0;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Bisq2 Section */
+.section-subtitle {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin: 0 0 1rem 0;
+}
+
+.bank-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bank-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bank-logo {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.reload-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.btn-reload {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.btn-reload.usdt {
+  background: linear-gradient(135deg, #26a345 0%, #1f7f34 100%);
+}
+
+.btn-reload.usdt:hover {
+  background: linear-gradient(135deg, #31c54f 0%, #26a345 100%);
+  box-shadow: 0 4px 12px rgba(38, 163, 69, 0.4);
+}
+
+.btn-reload.eurc {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.btn-reload.eurc:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+/* Trustless Nodes Section */
+.node-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.node-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.node-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.node-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.node-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.node-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.node-type {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 0.2rem 0 0 0;
+}
+
+.node-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.status-badge.on {
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.status-badge.off {
+  background: rgba(248, 113, 113, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.status-icon {
+  color: #4ade80;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.btn-start {
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-start:hover {
+  background: linear-gradient(135deg, #5ff393 0%, #4ade80 100%);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .app-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .dashboard-bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard {
+    overflow-y: auto;
+  }
+
+  .dashboard-content,
+  .dashboard-bottom {
+    padding: 1rem;
+  }
+
+  .dashboard-top-header {
+    padding: 1rem;
+  }
+
+  .app-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .app-card {
+    padding: 1rem 0.75rem;
+    min-height: 170px;
+  }
+
+  .app-card-icon {
+    font-size: 2.5rem;
+  }
+
+  .app-card-name {
+    font-size: 0.9rem;
+  }
+
+  .reload-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .balance-section {
+    gap: 1rem;
+  }
+
 }
 
 .shortcut-btn span:last-child {

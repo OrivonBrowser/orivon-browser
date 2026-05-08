@@ -16,6 +16,9 @@ export default defineConfig({
         'src/__tests__/',
       ],
     },
+    deps: {
+      external: ['@exodus/bytes', 'html-encoding-sniffer'],
+    },
   },
   resolve: {
     alias: {

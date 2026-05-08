@@ -2,7 +2,7 @@
   "name": "orivon-browser",
   "version": "0.0.1",
   "description": "A Web3-centric, trustless, user-friendly desktop browser",
-  "main": "dist/main.js",
+  "main": "dist/main/index.js",
   "homepage": "./",
   "author": "Orivon Team",
   "license": "Apache-2.0",

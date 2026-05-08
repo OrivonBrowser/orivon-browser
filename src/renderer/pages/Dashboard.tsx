@@ -11,8 +11,9 @@ interface DashboardProps {
 interface AppWithBadges extends Record<string, any> {
   id: string;
   name: string;
-  icon: string;
+  icon?: string;
   badges?: string[];
+  status?: string;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
@@ -32,7 +33,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
   }
 
   // Enhanced app data with badges and metadata
-  const enhancedApps = installedApps.map((app: AppWithBadges) => ({
+  const enhancedApps = installedApps.map((app) => ({
     ...app,
     badges: app.badges || ['IPFS'],
     status: app.status || 'online',
@@ -117,7 +118,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           </div>
           <div className="section-content">
             <div className="node-list">
-              <div className="node-item">
+              <div className="node-item bitcoin">
                 <div className="node-icon">₿</div>
                 <div className="node-info">
                   <p className="node-name">Bitcoin Pruned</p>
@@ -128,7 +129,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                   <span className="status-icon">✓</span>
                 </div>
               </div>
-              <div className="node-item">
+              <div className="node-item ethereum">
                 <div className="node-icon">◊</div>
                 <div className="node-info">
                   <p className="node-name">Ethereum Light</p>
@@ -139,7 +140,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                   <span className="status-icon">✓</span>
                 </div>
               </div>
-              <div className="node-item">
+              <div className="node-item monero">
                 <div className="node-icon">M</div>
                 <div className="node-info">
                   <p className="node-name">Monero Pruned</p>

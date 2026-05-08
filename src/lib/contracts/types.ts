@@ -88,6 +88,8 @@ export interface ModuleMetadata {
 }
 
 export interface InstalledApp extends AppManifest {
+  status: string;
+  badges: string[];
   installedAt: number;
   permissions: PermissionGrant[];
   enabled: boolean;

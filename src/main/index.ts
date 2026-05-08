@@ -1,7 +1,7 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'path';
 import isDev from 'electron-is-dev';
-import { PermissionRisk, TrustLevel, Theme } from '@/lib/contracts/types';
+import { PermissionRisk, TrustLevel, Theme } from '../lib/contracts/types';
 
 let mainWindow: BrowserWindow | null = null;
 

@@ -50,6 +50,8 @@ const MOCK_INSTALLED_APPS: InstalledApp[] = [
       },
     ],
     enabled: true,
+    status: 'active',
+    badges: ['verified'],
   },
   {
     id: 'app-2',
@@ -78,6 +80,8 @@ const MOCK_INSTALLED_APPS: InstalledApp[] = [
     installedAt: Date.now() - 30 * 24 * 60 * 60 * 1000, // 30 days ago
     permissions: [],
     enabled: true,
+    status: 'active',
+    badges: ['verified'],
   },
   {
     id: 'app-3',
@@ -99,6 +103,8 @@ const MOCK_INSTALLED_APPS: InstalledApp[] = [
     installedAt: Date.now() - 60 * 24 * 60 * 60 * 1000, // 60 days ago
     permissions: [],
     enabled: true,
+    status: 'active',
+    badges: ['trusted'],
   },
 ];
 
@@ -167,6 +173,8 @@ export const appsAdapter: IAppsAdapter = {
       installedAt: Date.now(),
       permissions: [],
       enabled: true,
+      status: 'active',
+      badges: [],
     };
 
     MOCK_INSTALLED_APPS.push(installedApp);

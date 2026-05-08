@@ -63,7 +63,7 @@ describe('Dashboard Component', () => {
       </UiProvider>
     );
 
-    const settingsBtn = screen.getByText(/Settings/i);
+    const settingsBtn = screen.getByTitle('Settings');
     expect(settingsBtn).toBeTruthy();
   });
 });

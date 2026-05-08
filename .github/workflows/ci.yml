@@ -73,6 +73,6 @@ jobs:
         with:
           name: windows-package
           path: |
-            dist/*.exe
-            dist/*.blockmap
+            dist/*Setup*.exe
+            dist/*Setup*.exe.blockmap
           retention-days: 5
